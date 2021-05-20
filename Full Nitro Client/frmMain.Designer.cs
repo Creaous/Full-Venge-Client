@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Full_Nitro_Client
 {
     partial class frmMain
@@ -33,9 +35,15 @@ namespace Full_Nitro_Client
             this.navbar = new System.Windows.Forms.MenuStrip();
             this.visualTweaksToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.giveYourselfOneMillionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.giveYourselfMembershipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.HacksStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gotoURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.goBackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.secretModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.additionalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,14 +51,6 @@ namespace Full_Nitro_Client
             this.openDevToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chromeBrowser = new CefSharp.WinForms.ChromiumWebBrowser();
-            this.gotoURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.giveYourselfAllCarsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.goBackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.tlpMain.SuspendLayout();
             this.navbar.SuspendLayout();
             this.SuspendLayout();
@@ -79,9 +79,9 @@ namespace Full_Nitro_Client
             this.navbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.visualTweaksToolStripMenuItem1,
             this.additionalToolStripMenuItem});
-            this.navbar.Location = new System.Drawing.Point(517, 0);
+            this.navbar.Location = new System.Drawing.Point(457, 0);
             this.navbar.Name = "navbar";
-            this.navbar.Size = new System.Drawing.Size(106, 24);
+            this.navbar.Size = new System.Drawing.Size(226, 24);
             this.navbar.TabIndex = 0;
             this.navbar.Text = "menuStrip2";
             // 
@@ -100,31 +100,73 @@ namespace Full_Nitro_Client
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.giveYourselfOneMillionToolStripMenuItem,
-            this.giveYourselfMembershipToolStripMenuItem,
-            this.giveYourselfAllCarsToolStripMenuItem});
+            this.HacksStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem1.Text = "Visual Tweaks";
+            this.toolStripMenuItem1.Text = "Tweaks";
             // 
-            // giveYourselfOneMillionToolStripMenuItem
+            // HacksStripMenuItem
             // 
-            this.giveYourselfOneMillionToolStripMenuItem.Name = "giveYourselfOneMillionToolStripMenuItem";
-            this.giveYourselfOneMillionToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.giveYourselfOneMillionToolStripMenuItem.Text = "Give Yourself One Million";
-            this.giveYourselfOneMillionToolStripMenuItem.Click += new System.EventHandler(this.giveYourselfOneMillionToolStripMenuItem_Click);
-            // 
-            // giveYourselfMembershipToolStripMenuItem
-            // 
-            this.giveYourselfMembershipToolStripMenuItem.Name = "giveYourselfMembershipToolStripMenuItem";
-            this.giveYourselfMembershipToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.giveYourselfMembershipToolStripMenuItem.Text = "Give Yourself Membership";
-            this.giveYourselfMembershipToolStripMenuItem.Click += new System.EventHandler(this.giveYourselfMembershipToolStripMenuItem_Click);
+            this.HacksStripMenuItem.Name = "HacksStripMenuItem";
+            this.HacksStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.HacksStripMenuItem.Text = "Hacks (Bannable)";
+            this.HacksStripMenuItem.Click += new System.EventHandler(this.HacksToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // otherToolStripMenuItem
+            // 
+            this.otherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gotoURLToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.toolStripMenuItem3,
+            this.goBackToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.refreshToolStripMenuItem});
+            this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
+            this.otherToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.otherToolStripMenuItem.Text = "Other";
+            // 
+            // gotoURLToolStripMenuItem
+            // 
+            this.gotoURLToolStripMenuItem.Name = "gotoURLToolStripMenuItem";
+            this.gotoURLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gotoURLToolStripMenuItem.Text = "Goto URL";
+            this.gotoURLToolStripMenuItem.Click += new System.EventHandler(this.gotoURLToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Text = "Go Forward";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            // 
+            // goBackToolStripMenuItem
+            // 
+            this.goBackToolStripMenuItem.Name = "goBackToolStripMenuItem";
+            this.goBackToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.goBackToolStripMenuItem.Text = "Go Back";
+            this.goBackToolStripMenuItem.Click += new System.EventHandler(this.goBackToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -178,64 +220,6 @@ namespace Full_Nitro_Client
             this.chromeBrowser.Size = new System.Drawing.Size(1134, 474);
             this.chromeBrowser.TabIndex = 1;
             // 
-            // gotoURLToolStripMenuItem
-            // 
-            this.gotoURLToolStripMenuItem.Name = "gotoURLToolStripMenuItem";
-            this.gotoURLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gotoURLToolStripMenuItem.Text = "Goto URL";
-            this.gotoURLToolStripMenuItem.Click += new System.EventHandler(this.gotoURLToolStripMenuItem_Click);
-            // 
-            // otherToolStripMenuItem
-            // 
-            this.otherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gotoURLToolStripMenuItem,
-            this.toolStripSeparator3,
-            this.toolStripMenuItem3,
-            this.goBackToolStripMenuItem,
-            this.toolStripSeparator4,
-            this.refreshToolStripMenuItem});
-            this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
-            this.otherToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.otherToolStripMenuItem.Text = "Other";
-            // 
-            // giveYourselfAllCarsToolStripMenuItem
-            // 
-            this.giveYourselfAllCarsToolStripMenuItem.Name = "giveYourselfAllCarsToolStripMenuItem";
-            this.giveYourselfAllCarsToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.giveYourselfAllCarsToolStripMenuItem.Text = "Give Yourself All Cars";
-            this.giveYourselfAllCarsToolStripMenuItem.Click += new System.EventHandler(this.giveYourselfAllCarsToolStripMenuItem_Click);
-            // 
-            // refreshToolStripMenuItem
-            // 
-            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.refreshToolStripMenuItem.Text = "Refresh";
-            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
-            // 
-            // goBackToolStripMenuItem
-            // 
-            this.goBackToolStripMenuItem.Name = "goBackToolStripMenuItem";
-            this.goBackToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.goBackToolStripMenuItem.Text = "Go Back";
-            this.goBackToolStripMenuItem.Click += new System.EventHandler(this.goBackToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem3.Text = "Go Forward";
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -251,7 +235,7 @@ namespace Full_Nitro_Client
             this.Name = "frmMain";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Full Nitro Client";
+            this.Text = "Full Venge Client";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
@@ -273,14 +257,12 @@ namespace Full_Nitro_Client
         private System.Windows.Forms.ToolStripMenuItem openDevToolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem giveYourselfOneMillionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem giveYourselfMembershipToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem HacksStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem secretModeToolStripMenuItem;
         private CefSharp.WinForms.ChromiumWebBrowser chromeBrowser;
         private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gotoURLToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem giveYourselfAllCarsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem goBackToolStripMenuItem;

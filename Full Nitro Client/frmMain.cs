@@ -43,8 +43,6 @@ namespace Full_Nitro_Client
 
         private void ChromeBrowser_FrameLoadEnd(object sender, FrameLoadEndEventArgs e)
         {
-            RunScript("jQuery", false);
-
             // If the Enable Gold Membership file exists.
             if (File.Exists(cacheDirBase + "\\EnableGoldMembership.dat"))
             {
@@ -78,7 +76,7 @@ namespace Full_Nitro_Client
             // Initialize cef with the provided settings
             Cef.Initialize(settings);
 
-            chromeBrowser.Load("https://www.nitrotype.com/login");
+            chromeBrowser.Load("https://venge.io");
 
             /* Create a browser component
             chromeBrowser = new ChromiumWebBrowser("https://www.nitrotype.com/login")
@@ -93,37 +91,7 @@ namespace Full_Nitro_Client
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            // Create a new variable for the tool strip item.
-            var membership = giveYourselfMembershipToolStripMenuItem;
-
-            // If the enable gold membership file exists.
-            if (File.Exists(cacheDirBase + "\\EnableGoldMembership.dat"))
-            {
-                // Set the text to ON with the original text.
-                membership.Text = "ON " + membership.Text;
-            }
-            else
-            {
-                // Set the text to OFF with the original text.
-                membership.Text = "OFF " + membership.Text;
-            }
-
-
-
-            // Create a new variable for the tool strip item.
-            var cars = giveYourselfAllCarsToolStripMenuItem;
-
-            // If the enable gold membership file exists.
-            if (File.Exists(cacheDirBase + "\\GiveAllCars.dat"))
-            {
-                // Set the text to ON with the original text.
-                cars.Text = "ON " + cars.Text;
-            }
-            else
-            {
-                // Set the text to OFF with the original text.
-                cars.Text = "OFF " + cars.Text;
-            }
+            // Removed some stuff.
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -249,35 +217,6 @@ namespace Full_Nitro_Client
             chromeBrowser.ShowDevTools();
         }
 
-        private void giveYourselfMembershipToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Create a new membership variable for the tool strip menu item.
-            var membership = giveYourselfMembershipToolStripMenuItem;
-
-            // If the membership text contains OFF.
-            if (membership.Text.Contains("OFF "))
-            {
-                // Create the dat file to enable the membership.
-                File.Create(cacheDirBase + "\\EnableGoldMembership.dat");
-                // Handle a restart.
-                HandleRestart();
-            }
-            // Else if the membership text contains ON.2
-            else if (membership.Text.Contains("ON "))
-            {
-                // Shutdown the CEF process.
-                Cef.Shutdown();
-                // Delete the dat file to disable the membership.
-                File.Delete(cacheDirBase + "\\EnableGoldMembership.dat");
-                // Reset the local storage.
-                ResetLocalStorage();
-                // Reset the caches.
-                ResetCaches();
-                // Handle a restart.
-                HandleRestart();
-            }
-        }
-
         private void RunScript(string name, bool reload)
         {
             // Write a line to the console saying it is executing.
@@ -289,11 +228,6 @@ namespace Full_Nitro_Client
                 // Reload the browser.
                 chromeBrowser.Reload();
             }
-        }
-
-        private void giveYourselfOneMillionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RunScript("OneMillion", true);
         }
 
         private void secretModeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -308,35 +242,6 @@ namespace Full_Nitro_Client
             BROWSER_URL = "https://google.com";
         }
 
-        private void giveYourselfAllCarsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Create a new membership variable for the tool strip menu item.
-            var cars = giveYourselfAllCarsToolStripMenuItem;
-
-            // If the membership text contains OFF.
-            if (cars.Text.Contains("OFF "))
-            {
-                // Create the dat file to enable the membership.
-                File.Create(cacheDirBase + "\\GiveAllCars.dat");
-                // Handle a restart.
-                HandleRestart();
-            }
-            // Else if the membership text contains ON.
-            else if (cars.Text.Contains("ON "))
-            {
-                // Shutdown the CEF process.
-                Cef.Shutdown();
-                // Delete the dat file to disable the membership.
-                File.Delete(cacheDirBase + "\\GiveAllCars.dat");
-                // Reset the local storage.
-                ResetLocalStorage();
-                // Reset the caches.
-                ResetCaches();
-                // Handle a restart.
-                HandleRestart();
-            }
-        }
-
         private void gotoURLToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Full_Nitro_Client.Controls.frmGotoURL uc = new Full_Nitro_Client.Controls.frmGotoURL();
@@ -346,6 +251,11 @@ namespace Full_Nitro_Client
         private void tlpMain_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void HacksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RunScript("Hacks", true);
         }
 
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)

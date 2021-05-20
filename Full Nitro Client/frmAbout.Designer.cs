@@ -56,9 +56,9 @@ namespace Full_Nitro_Client
             this.lbProdName.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lbProdName.Location = new System.Drawing.Point(129, 13);
             this.lbProdName.Name = "lbProdName";
-            this.lbProdName.Size = new System.Drawing.Size(104, 19);
+            this.lbProdName.Size = new System.Drawing.Size(111, 19);
             this.lbProdName.TabIndex = 1;
-            this.lbProdName.Text = "Full Nitro Client";
+            this.lbProdName.Text = "Full Venge Client";
             // 
             // lbVersion
             // 
@@ -78,7 +78,7 @@ namespace Full_Nitro_Client
             this.lbVer.Name = "lbVer";
             this.lbVer.Size = new System.Drawing.Size(57, 19);
             this.lbVer.TabIndex = 3;
-            this.lbVer.Text = "v1.0.0.2";
+            this.lbVer.Text = "v1.0.0.0";
             // 
             // lbDescription
             // 
@@ -120,18 +120,18 @@ namespace Full_Nitro_Client
             this.rtbDescription.ReadOnly = true;
             this.rtbDescription.Size = new System.Drawing.Size(220, 96);
             this.rtbDescription.TabIndex = 7;
-            this.rtbDescription.Text = "Full Nitro Client is a client built for the website NitroType which is owned by t" +
-    "eaching.com. This client aims to add more features and have a little bit of fun!" +
-    "";
+            this.rtbDescription.Text = "Full Venge Client is a client built for the website Venge which is a first person" +
+    " FPS shooter game. This client aims to add more features and have a little bit o" +
+    "f fun!";
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(12, 221);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(221, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(188, 19);
             this.metroLabel1.TabIndex = 8;
-            this.metroLabel1.Text = "NitroType is owned by teaching.com";
+            this.metroLabel1.Text = "Venge is owned by its creators.";
             // 
             // frmAbout
             // 
